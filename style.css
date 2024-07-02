@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+section {
+    padding: 10px 20px;
+    text-align: left;
+    margin-top:30px;
+    
+}
+
+section a {
+    margin: 0 10px;
+    text-decoration: none;
+   
+    
+}
+
+#registery{
+    font-weight: bold;
+    margin-right: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #273c46;;
+}
+
+#registery:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+main .top-img {
+    position: relative;
+    text-align: center;
+    color: white;    
+}
+
+.top-img {
+    display: flex;
+    justify-content: center;
+    width:100%;
+    height:300px;
+}
+
+.search-registry h2{
+    
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+
+
+.hero-text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 150px;
+}
+
+.hero-text h1 {
+    margin: 0;
+    text-align: center;
+  color: black;
+  width: 710px;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: xx-large;
+ 
+}
+
+.hero-text p{
+    color: black;
+    font-size: x-large;
+}
+
+
+
+
+.hero-text button {
+    background-color: #ffcc00;
+    width: 300px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 15px;
+    color: black;
+}
+
+
+
+.search-registry {
+    display: inline-flex;
+  justify-content: center;
+  width: 80%;
+  margin-left:185px;
+  margin-top: 120px;
+  background-color: #F4F2F3;
+  gap: 12px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-box input, .search-box select, .search-box button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-box input, .search-box select{
+    height: 30px;
+    width: 300px;
+    margin-top: 10px;
+}
+
+
+
+.search-box button{
+    width: 100px;
+    margin-top:4px ;
+    background-color: black;
+    color: #F4F2F3;
+    border-radius: 30px;
+}
+
+
+
+.learn-more {
+    text-align: center;
+    padding: 20px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.card {
+    width: 100;
+    text-align: center;
+    box-shadow: rgba(0,0,0,.15) 2px 2px 2px;
+    align-items: center;
+    color: #111;
+    padding-bottom: 30px;
+    justify-content: space-between;
+    
+    
+    
+}
+
+.card p {
+    margin: 10px 0 0;
+}
