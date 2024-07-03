@@ -96,3 +96,25 @@ main {
 @media (max-width: 1511px) {
 
 }
+
+/* SUB FOOTER INDEX ------------- */
+
+.end-page-container {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.end-page-container button {
+    background-color: #febd69;
+    padding: 8px 100px;
+    border-radius: 4px;
+}
+
+.end-page-container p a {
+    color: #007185;
+}
+
+.end-page-container p a:hover {
+    color: #c7511f;
+    text-decoration: underline;
+}
