@@ -87,12 +87,8 @@ main {
     color: #0f1111;
 }
 
-/* @media (max-width: 1200px) {
-    .content-container {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+.card-content-section img {
+    height: 115px;
+    width: 185px;
+}
 
-    .span-4-cols {
-        grid-column: span 3;
-    }
-} */
