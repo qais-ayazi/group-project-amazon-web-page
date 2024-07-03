@@ -50,6 +50,7 @@ main {
 .content-container {
     margin: 0 1.5em;
     margin-top: -650px;
+    max-width: 1511px;
     z-index: 5;
     display: grid;
     gap: 20px;
@@ -92,3 +93,6 @@ main {
     width: 185px;
 }
 
+@media (max-width: 1511px) {
+
+}
