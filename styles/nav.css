@@ -1,0 +1,220 @@
+/* NAV TOP HALF ------------------------------------- */
+body {
+    min-width: 1300px; /* Ensures Nav and Footer stay full sized */
+}
+
+nav {
+    font-size: 12px;
+}
+
+.nav-top {
+    align-items: center;
+    gap: 10px;
+    background-color: #0f1111;
+}
+
+.nav-top * {
+    cursor: pointer;
+}
+
+.nav-top > *:not(.nav-search-container):not(.nav-top img) {
+    padding: 10px;
+
+}
+
+.nav-top>img:hover,
+.nav-top > div:not(.nav-search-container):hover {
+    border: 1px solid white;
+}
+
+.nav-delivery-location {
+    position: relative;
+}
+
+.nav-delivery-left i {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+}
+
+.nav-top img {
+    width: 120px;
+    padding-left: 10px;
+}
+
+.nav-top .nav-language img {
+    height: 20px;
+    width: 31px;
+}
+
+.nav-basket span {
+    left: 24px;
+    top: 8px;
+}
+
+.nav-delivery-location, 
+.nav-language, 
+.nav-sign-in, 
+.nav-orders, 
+.nav-basket, 
+.nav-top img {
+    flex-shrink: 0; 
+}
+
+/* NAV SEARCH BAR ------------------------------------- */
+
+.nav-search-container {
+    overflow: hidden;
+    min-width: 444px;
+}
+
+.nav-search-container input:focus {
+    outline: none;
+}
+
+.nav-search-container select {
+    border: none;
+    background-color: #f3f3f3;
+    padding: 10px;
+    height: 40px;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.nav-search-container select:focus {
+    outline: none;
+}
+
+.nav-search-container input {
+    border: none;
+    padding: 10px;
+    flex-grow: 1;
+    height: 40px;
+}
+
+.nav-search-container button {
+    background-color: #febd69;
+    border: none;
+    padding: 10px 20px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.nav-search-container button:hover {
+    background-color: #f3a847;
+}
+
+/* DROPDOWNS-------------------------------------------------- */
+
+.nav-sign-in, .nav-language {
+    position: relative;
+}
+
+.nav-language-dropdown, .nav-sign-in-dropdown {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 1px 2px 2px #ccc;
+}
+
+.nav-language:hover .nav-language-dropdown,
+.nav-sign-in:hover .nav-sign-in-dropdown {
+    display: flex;
+}
+
+/* Nav language dropdown */
+
+.nav-language-dropdown {
+    width: 240px;
+    top: 40px;
+    z-index: 15;
+    padding: 1em;
+}
+
+.nav-language-dropdown a {
+    color: #007185;
+}
+
+.nav-language-dropdown a:hover {
+    color: #c7511f;
+}
+
+.nav-language-dropdown ul {
+    border-bottom: 1px solid #cccccc70;
+    padding-bottom: 0.5em;
+}
+
+.nav-language-dropdown ul li {
+    padding: 0.5em;
+}
+
+.nav-language-dropdown .english {
+    border-bottom: 1px solid #cccccc70;
+    margin-bottom: 0.5em;
+    padding-bottom: 1em;
+} 
+
+.nav-language-dropdown .change-currency {
+    border-bottom: 1px solid #cccccc70;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding-bottom: 1em;
+}
+
+
+/* Nav sign in dropdown  */
+
+.nav-sign-in-dropdown {
+    left: -250px;
+    top: 50px;
+    width: 500px;
+}
+
+.nav-sign-in-dropdown a:hover {
+    text-decoration: underline;
+}
+
+.nav-sign-in-dropdown button {
+    background-color: #febd69;
+    padding: 8px 80px;
+    border-radius: 4px;
+}
+
+.nav-sign-in-dropdown .start-here {
+    color: #007185;
+}
+
+.nav-sign-in-dropdown .start-here:hover {
+    color: #c7511f;
+    text-decoration: underline;
+}
+
+.nav-sign-in-dropdown ul li {
+    margin-top: 5px;
+}
+
+.sign-in-text {
+    border-top: 1px solid #cccccc70;
+}
+
+.your-account {
+    border-left: 1px solid #cccccc70;
+}
+
+/* NAV TOP HALF END ---------------------------------- */
+
+/* NAV BOTTOM HALF ----------------------------------- */
+
+.nav-bottom>div, .nav-bottom>a {
+    padding: 12px 15px 12px 15px;
+}
+
+.nav-bottom>div:hover, .nav-bottom>a:hover {
+    border: 1px solid white;
+}
+
+/* NAV BOTTOM HALF END */
