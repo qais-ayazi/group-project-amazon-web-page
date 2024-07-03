@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todays Deals</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/5f6f4a6f86.js" crossorigin="anonymous"></script>
+    <style>
+    body {
+    min-width: 1300px; /* Ensures Nav and Footer stay full sized */
+}
+
+nav {
+    font-size: 12px;
+}
+
+.nav-top {
+    align-items: center;
+    gap: 10px;
+    background-color: #0f1111;
+}
+
+.nav-top * {
+    cursor: pointer;
+}
+
+.nav-top > *:not(.nav-search-container):not(.nav-top img) {
+    padding: 10px;
+
+}
+
+.nav-top>img:hover,
+.nav-top > div:not(.nav-search-container):hover {
+    border: 1px solid white;
+}
+
+.nav-delivery-location {
+    position: relative;
+}
+
+.nav-delivery-left i {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+}
+
+.nav-top img {
+    width: 120px;
+    padding-left: 10px;
+}
+
+.nav-top .nav-language img {
+    height: 20px;
+    width: 31px;
+}
+
+.nav-basket span {
+    left: 24px;
+    top: 8px;
+}
+
+.nav-delivery-location, 
+.nav-language, 
+.nav-sign-in, 
+.nav-orders, 
+.nav-basket, 
+.nav-top img {
+    flex-shrink: 0; 
+}
+
+/* NAV SEARCH BAR ------------------------------------- */
+
+.nav-search-container {
+    overflow: hidden;
+    min-width: 444px;
+}
+
+.nav-search-container input:focus {
+    outline: none;
+}
+
+.nav-search-container select {
+    border: none;
+    background-color: #f3f3f3;
+    padding: 10px;
+    height: 40px;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.nav-search-container select:focus {
+    outline: none;
+}
+
+.nav-search-container input {
+    border: none;
+    padding: 10px;
+    flex-grow: 1;
+    height: 40px;
+}
+
+.nav-search-container button {
+    background-color: #febd69;
+    border: none;
+    padding: 10px 20px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.nav-search-container button:hover {
+    background-color: #f3a847;
+}
+
+/* DROPDOWNS-------------------------------------------------- */
+
+.nav-sign-in, .nav-language {
+    position: relative;
+}
+
+.nav-language-dropdown, .nav-sign-in-dropdown {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 1px 2px 2px #ccc;
+}
+
+.nav-language:hover .nav-language-dropdown,
+.nav-sign-in:hover .nav-sign-in-dropdown {
+    display: flex;
+}
+
+/* Nav language dropdown */
+
+.nav-language-dropdown {
+    width: 240px;
+    top: 40px;
+    z-index: 15;
+    padding: 1em;
+}
+
+.nav-language-dropdown a {
+    color: #007185;
+}
+
+.nav-language-dropdown a:hover {
+    color: #c7511f;
+}
+
+.nav-language-dropdown ul {
+    border-bottom: 1px solid #cccccc70;
+    padding-bottom: 0.5em;
+}
+
+.nav-language-dropdown ul li {
+    padding: 0.5em;
+}
+
+.nav-language-dropdown .english {
+    border-bottom: 1px solid #cccccc70;
+    margin-bottom: 0.5em;
+    padding-bottom: 1em;
+} 
+
+.nav-language-dropdown .change-currency {
+    border-bottom: 1px solid #cccccc70;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding-bottom: 1em;
+}
+
+
+/* Nav sign in dropdown  */
+
+.nav-sign-in-dropdown {
+    left: -250px;
+    top: 50px;
+    width: 500px;
+}
+
+.nav-sign-in-dropdown a:hover {
+    text-decoration: underline;
+}
+
+.nav-sign-in-dropdown button {
+    background-color: #febd69;
+    padding: 8px 80px;
+    border-radius: 4px;
+}
+
+.nav-sign-in-dropdown .start-here {
+    color: #007185;
+}
+
+.nav-sign-in-dropdown .start-here:hover {
+    color: #c7511f;
+    text-decoration: underline;
+}
+
+.nav-sign-in-dropdown ul li {
+    margin-top: 5px;
+}
+
+.sign-in-text {
+    border-top: 1px solid #cccccc70;
+}
+
+.your-account {
+    border-left: 1px solid #cccccc70;
+}
+
+/* NAV TOP HALF END ---------------------------------- */
+
+/* NAV BOTTOM HALF ----------------------------------- */
+
+.nav-bottom>div, .nav-bottom>a {
+    padding: 12px 15px 12px 15px;
+}
+
+.nav-bottom>div:hover, .nav-bottom>a:hover {
+    border: 1px solid white;
+}
+
+    
+    
+    
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.header {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.header nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.product-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap:20px;
+}
+
+.product-header .product-title {
+    font-size: 16px;
+}
+
+.product-header .product-price {
+    font-size: 16px;
+    font-weight: bold;
+}
+.discount {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.add-to-cart {
+    background-color: #ff9900;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.banner {
+    background-color: #d32f2f;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.banner h1 {
+    margin: 0;
+}
+
+.main-content {
+    
+    display: flex;
+   
+    margin: 20px ;
+    
+}
+.filters {
+    width: 200px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+.filters label {
+    list-style-type: none;
+    padding: 0;
+}
+
+/*.filters  {
+    margin-bottom: 5px;
+}*/
+
+/**{
+    box-sizing: border-box;
+    text-indent: 0;
+    font-weight: 400;
+}*/
+.filters h2 {
+    margin-top: 0;
+}
+
+.filters fieldset {
+    margin-bottom: 20px;
+}
+
+.content {
+    flex-grow: 1;
+}
+.featured-deals, .categories {
+    margin-bottom: 20px;
+}
+
+.featured-deals h2, .categories h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.deals-grid, .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+/*.a-button .a-icon-previous {
+  margin: 5px 6px 5px 5px;
+}
+.a-icon-previous .a-icon-next {
+  width: 11px;
+  height: 15px;
+  background-position: -123px -7px;
+}.a-icon {
+  
+  background-color: #555;
+  background-size: 400px 900px;
+  background-repeat: no-repeat;
+}
+i {
+  font-style: italic;
+}
+* {
+  
+  box-sizing: border-box;
+}
+.a-button-image .a-button-inner {
+  line-height: 0;
+}*/
+.product-card, .category-card {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product-card img, .category-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card .price {
+    color: #b12704;
+    font-weight: bold;
+}
+
+.product-card .description {
+    font-size: 14px;
+    color: #555;
+}
+
+.categories-grid .category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.categories-grid .category-card p {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+}
+
+.product-list {
+    display: flex;
+    gap: 20px;
+   /* position:relative;  */
+}
+
+
+/*.filters  {
+    margin-bottom: 5px;
+}*/
+
+.products-grid {
+    flex: 4;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+footer {
+    font-size: 12px;
+}
+
+/* FOOTER TOP HALF --------------------------------------------------------- */
+
+/* Footer top top -----------------------------------*/
+
+.footer-top-top {
+    background-color: #364457;
+}
+
+.footer-top-top:hover {
+    background-color: #364457d8;
+    cursor: pointer;
+}
+
+
+/* Footer top middle --------------------------------*/
+
+.footer-top-middle, .footer-top-bottom {
+    background-color: #232f3e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-top-middle {
+    border-bottom: 1px solid #cccccc2d;
+}
+
+.footer-top-middle p:hover {
+    text-decoration: underline;
+}
+
+.footer-top-middle-links p {
+    font-size: 14px;
+    color: #bcbdbe;
+}
+
+/* Footer top bottom --------------------------------- */
+
+.footer-top-bottom-buttons img {
+    height: 23px;
+    width: 76px;
+    cursor: pointer;
+}
+
+.footer-top-bottom-buttons {
+    padding: 30px;
+}
+
+.footer-top-bottom-buttons a, .US-button {
+    border: 1px solid #bcbdbe;
+    color: #bcbdbe;
+    border-radius: 4px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.footer-top-bottom-buttons .US-flag {
+    height: 16px;
+    width: 21px;
+}
+
+/* FOOTER TOP END ------------------------------------------------------------*/
+
+
+
+/* FOOTER BOTTOM HALF ------------------------------------------------------- */
+
+/* Footer bottom top ----------------------- */
+
+.footer-bottom {
+    background-color: #131a22;
+    color: #dddddd;
+}
+
+.footer-bottom-top {
+    display: grid;
+    grid-template-columns: repeat(7, 110px);
+    grid-template-rows:  auto auto auto auto;
+    column-gap: 30px;
+    row-gap: 15px;
+}
+
+.footer-bottom-top div p {
+    line-height: 15px;
+}
+
+.footer-bottom-top div p:first-child {
+    font-weight: bold;
+}
+
+.footer-bottom div p:nth-child(2) {
+    color: #999999;
+}
+
+.footer-bottom-top div p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Footer bottom bottom -------------------- */
+
+.footer-bottom-bottom div a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <nav id="top" class="text-white flex flex-col">
+        <!-- NAV TOP HALF -------------------------------------->
+        <div class="nav-top w-full flex text-xs pl-4 pr-4">
+
+            <img src="./nav-img/amazon-logo.png" alt="amazon logo">
+
+            <div class="nav-delivery-location flex gap-2.5 ml-4 mr-3">
+                <div class="nav-delivery-left">
+                    <i class="fa-solid fa-location-dot fa-xl"></i>
+                </div>
+                <div class="nav-delivery-right">
+                    <p>Deliver to</p> 
+                    <p class=""><b> Germany</b></p>
+                </div>
+            </div>    
+
+            <!-- SEARCH BAR -->
+            <div class="nav-search-container flex items-center rounded grow">
+                <select class="text-black">
+                    <option value="all">All</option>
+                    <option value="books">Books</option>
+                    <option value="electronics">Electronics</option>
+                </select>
+                <input class="text-black" type="text" placeholder="Search Amazon">
+                <button class="flex items-center justify-center"><i class="fa-solid fa-search text-black text-xl"></i></button>
+            </div>
+            <!-- SEARCH BAR END -->
+
+            <div class="nav-language flex items-center gap-0.5 mt-3 pb-0">
+                <img src="./nav-img/icons8-us-flag-48.png" alt="US flag">
+                <p><b>EN</b> <i class="fa-solid fa-angle-down"></i></p>
+                <!-- NAV LANGUAGE DROPDOWN -->
+                <div class="nav-language-dropdown hidden flex flex-col gap-2">
+                    <div>
+                        <p class="pr-1 inline">Change language <a href="">Learn more</a></p>
+                    </div>
+                    <ul>
+                        <li class="english">
+                            <input type="radio" name="language">
+                            <label for="">English - EN</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="language">
+                            <label for="">español - ES</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="language">
+                            <label for="">Deutsch - DE</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="language">
+                            <label for="">português - PT</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="language">
+                            <label for="">italiano - IT</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="language">
+                            <label for="">العربية - AR</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="language">
+                            <label for="">中文 - CN</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="language">
+                            <label for="">한국어 - KO</label>
+                        </li>
+                    </ul>
+                    <div class="change-currency">
+                        <p class="mb-2">Change currency <a href="">Learn more</a>
+                        </p>
+                        <p>$ - USD - US Dollar <a href="">Change</a></p>
+                    </div>
+                    <div class="flex gap-1">
+                        <img src="./nav-img/icons8-us-flag-48.png" alt="">
+                        <p class="mb-1">You are shopping on Amazon.com</p>
+                    </div>
+                    <div class="flex justify-center">
+                        <a class="" href="">Change country/region</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-sign-in">
+                <p>Hello, sign in</p>
+                <p><b>Account & Lists</b> <i class="fa-solid fa-angle-down"></i></p>
+                <!-- NAV SIGN IN DROPDOWN -->
+                <div class="nav-sign-in-dropdown hidden flex flex-col p-4 gap-2">
+
+                    <div class="flex flex-col items-center gap-1">
+                        <button><a href="">Sign in</a></button>
+                        <p>New customer? <a class="start-here" href="">Start here</a></p>
+                    </div>
+
+                    <div class="flex gap-4 sign-in-text">
+
+                        <div class="p-5 flex-1">
+                            <h6 class="text-base font-bold">Your Lists</h6>
+                            <ul>
+                                <li><a href="">Create a List</a></li>
+                                <li><a href="">Find a List or Registry</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="your-account p-5 flex-1">
+                            <h6 class="text-base font-bold">Your Account</h6>
+                            <ul>
+                                <li><a href="">Account</a></li>
+                                <li><a href="">Orders</a></li>
+                                <li><a href="">Recommendations</a></li>
+                                <li><a href="">Browsing History</a></li>
+                                <li><a href="">Watchlist</a></li>
+                                <li><a href="">Video Purchases & Rentals</a></li>
+                                <li><a href="">Kindle Unlimited</a></li>
+                                <li><a href="">Content & Devices</a></li>
+                                <li><a href="">Subscribe & Save Items</a></li>
+                                <li><a href="">Memberships & Subscriptions</a></li>
+                                <li><a href="">Music Library</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-orders">
+                <p>Returns</p>
+                <p><b>& Orders</b></p>
+            </div>
+
+            <div class="nav-basket flex relative">
+                <span class="text-yellow-600 font-extrabold text-lg absolute">0</span>
+                <i class="fa-solid fa-cart-shopping text-3xl"></i>
+                <p class="self-end"><b>Cart</b></p>
+            </div>
+        </div>
+
+        <!-- NAV BOTTOM HALF ----------------------------------->
+
+        <div class="nav-bottom bg-gray-800 w-full flex items-center text-sm">
+
+            <div class="nav-burger flex gap-2 ml-5">
+                <img class="h-5" src="./nav-img/icons8-menu-50.png" alt="">
+                <p>All</p>
+            </div>
+
+            <a href="#">Today's Deals</a>
+            <a href="customer-service.html">Customer Service</a>
+            <a href="registry.html">Registry</a>
+            <a href="#">Gift Cards</a>
+            <a href="#">Sell</a>
+        </div>
+    </nav>
+</header>
+    <div class="header">
+        <nav>
+            <a href="#">Today's Deals</a>
+            <a href="#">Coupons</a>
+            <a href="#">Renewed Deals</a>
+            <a href="#">Outlet</a>
+            <a href="#">Digital Deals</a>
+            <a href="#">Amazon Basics</a>
+            <a href="#">Grocery Deals</a>
+        </nav>
+        <div class="product-header">
+            <div class="product-title">Trace Minerals ConcenTrace Drops | Full...</div>
+            <div class="product-price">$14.99</div>
+            <p class="discount">31% off</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <div class="banner">
+        <h1>July Sale: Up to 35% off</h1>
+    </div>
+    <div class="main-content">
+        
+        <aside class="filters">
+            <!--  radio buttons  -->
+            <h2>Filters</h2>
+            <form>
+                <fieldset>
+                    <legend>Department</legend>
+                    <label>
+                        <input type="radio" name="department" value="all" checked>
+                        All
+                    </label><br>
+                    <label>
+                        <input type="radio" name="department" value="drums">
+                        Drums & Percussion
+                    </label><br>
+                    <label>
+                        <input type="radio" name="department" value="keyboards">
+                        Keyboards & MIDI
+                    </label><br>
+                    <label>
+                        <input type="radio" name="department" value="microphones">
+                        Microphones & Accessories
+                    </label><br>
+                    <label>
+                        <input type="radio" name="department" value="guitar">
+                        Guitars
+                    </label><br>
+                    <fieldset>
+                        <legend>All Departments</legend>
+                        <label>
+                            <input type="radio" name="department" value="all" checked>
+                            All
+                        </label><br>
+                        <label>
+                            <input type="radio" name="department" value="drums">
+                            Amazon Devices & Accessories
+                        </label><br>
+                        <label>
+                            <input type="radio" name="department" value="keyboards">
+                            Appliances
+                        </label><br>
+                        <label>
+                            <input type="radio" name="department" value="microphones">
+                            Arts, Crafts & Sewing
+                        </label><br>
+                        <label>
+                            <input type="radio" name="department" value="guitar">
+                            Audible Books & Originals
+                        </label><br>
+                    
+                    <h3>Deals</h3>
+      
+       
+    
+                </fieldset>
+                <fieldset>
+                    <legend>Brand</legend>
+                    <label>
+                        <input type="checkbox" name="brand" value="cosroad">
+                        Cosroad
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="brand" value="craydar">
+                        Craydar
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="brand" value="dreamfx">
+                        DREAMFX
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="brand" value="edealz">
+                        EDEALZ
+                    </label><br>
+                   
+                </fieldset>
+            </form>
+        
+    </aside>   
+    <div class="content">
+        <section class="featured-deals">
+            <h2>Featured Today's  Deals</h2>
+            
+            <div class="deals-grid">
+           
+                <div class="product-card">
+                    <img alt="Samsonite Omni 2 Hardside Expandable Luggage with Spinner Wheels, Arctic Silver, 2-Piece Set (Carry-on PRO/Medium)" src="https://m.media-amazon.com/images/I/8107XpjQSML._AC_SY155_.jpg" data-a-hires="https://m.media-amazon.com/images/I/8107XpjQSML._AC_SY310_.jpg">
+                     
+                    <p class="price">$121.99 <span>With Prime</span></p>
+                    <p class="description">Samsonite Omni 2 Hardside Expandable Luggage Set</p>
+                </div>
+                
+            
+            
+                <div class="product-card">
+                <img alt="SAMSUNG Galaxy Watch 6 40mm Bluetooth Smartwatch, Fitness Tracker, Personalized HR Zones, Advanced Sleep Coaching, Heart Monitor, BIA Sensor for Health Wellness Insights, Big Screen, US Version, Gold" src="https://m.media-amazon.com/images/I/61GT3v2ztOL._AC_SY155_.jpg" data-a-hires="https://m.media-amazon.com/images/I/61GT3v2ztOL._AC_SY310_.jpg">
+                <p class="price">$125.99 <span>With Prime</span></p>
+                <p class="description"></p>SAMSUNG Galaxy Watch 6 40mm Bluetooth Smartwatch</p>
+            </div>
+            <div class="product-card">
+                <img alt="Dokotoo Black Dress Dresses for Women 2024 Summer Drawstring V-Neck Ruffle Party Womens Dresses Cocktail Tank Dress Little Mini Dress" src="https://m.media-amazon.com/images/I/514G48KvT8L._AC_SY155_.jpg" data-a-hires="https://m.media-amazon.com/images/I/514G48KvT8L._AC_SY310_.jpg">
+                <p class="price">$33.99 <span>With Prime</span></p>
+                <p class="description">Dokotoo Womens Dresses 2024 Spring Summer Deep</p>
+            </div>
+            <div class="product-card">
+                <img alt="Wise Owl Outfitters Hammock for Camping Double Hammocks Gear for The Outdoors Backpacking Survival or Travel - Portable Lightweight Parachute Nylon DO Charcoal Rose" src="https://m.media-amazon.com/images/I/81w00TkgJdL._AC_SY155_.jpg" data-a-hires="https://m.media-amazon.com/images/I/81w00TkgJdL._AC_SY310_.jpg">
+                <p class="price">$17.99 <span>With Prime</span></p>
+                <p class="description">Wise Owl Outfitters Hammock for Camping Double Hammocks Gear for The Outdoors Backpacking Survival or Travel</p>
+            </div>
+            
+                <div class="product-card">
+                    <img alt="KINGYES Folding Adirondack Chair, HDPE All-Weather Folding Adirondack Chair, Orange" src="https://m.media-amazon.com/images/I/71TYi6VX-GL._AC_SY155_.jpg" data-a-hires="https://m.media-amazon.com/images/I/71TYi6VX-GL._AC_SY310_.jpg">
+                    <p class="price">$101.99 <span>With Prime</span></p>
+                    <p class="description">KINGYES Folding Adirondack Chair, HDPE All-Weather Fol…</p>
+                </div>
+               
+                <div class="product-card">
+                    <img alt="Amazon Basics 2-Ply Toilet Paper Soft and Strong, 30 Ultra Rolls = 120 Regular Rolls, Unscented, 340 Sheet (30 Rolls)" src="https://m.media-amazon.com/images/I/61UY5AUV1gL._AC_SY155_.jpg" data-a-hires="https://m.media-amazon.com/images/I/61UY5AUV1gL._AC_SY310_.jpg">
+                    <p class="price">$11.99 <span>With Prime</span></p>
+                    <p class="description">Amazon Basics 2-Ply Toilet Paper Soft and Strong, 30 Ul…</p>
+                </div> 
+             
+            <div class="product-card">
+                <img alt="Nostalgia Electric Ice Cream Maker - Old Fashioned Soft Serve Ice Cream Machine Makes Frozen Yogurt or Gelato in Minutes - Fun Kitchen Appliance - Vintage Wooden Style - Dark Wood - 6 Quart" src="https://m.media-amazon.com/images/I/911IU7NSPxL._AC_SY155_.jpg" data-a-hires="https://m.media-amazon.com/images/I/911IU7NSPxL._AC_SY310_.jpg">
+                <p class="price">$57.99 <span>With Prime</span></p>
+                <p class="description"></p>Nostalgia Electric Ice Cream Maker - Old Fashioned Soft S</p>
+            </div>
+           
+               
+               
+           
+        </section>
+        <section class="categories">
+            <h2>Categories</h2>
+            <div class="categories-grid">
+                
+                <button data-csa-c-type="uxElement" data-csa-c-element-id="filter-bubble-4th-july" data-csa-c-element-type="option" data-csa-c-painter="discount-asin-grid" data-testid="filter-bubble-4th-july" aria-pressed="false" class="Bubble-module__bubble_HMAsFLoooPgV9bEqZsLu" data-csa-c-id="alszxf-gdw3wh-e1dznh-64m7i3"><div class="a-image-container a-dynamic-image-container Bubble-module__imageContainer_RKfjEkcvblyyPGXXbqm7"><img alt="Featured deals" src="https://m.media-amazon.com/images/G/01/DiscoTec/2024/Deals/4thofJuly/Landing_Page/Deals24_July4_48_TodaysDeal_Bubbler_500x500.png" class="Bubble-module__image_HKJMewjp5e7N8Poe02Ol"></div>Featured deals</button>
+                <div class="category-card">
+                    <img alt="Home &amp; Kitchen" src="https://m.media-amazon.com/images/G/01/goldbox/images/faceout/Home_white._CB468586683_.png" class="Bubble-module__image_HKJMewjp5e7N8Poe02Ol">
+                    <p>Home & Kitchen</p>
+                </div>
+                <div class="category-card">
+                    <img alt="Lawn &amp; Garden"src="https://m.media-amazon.com/images/G/01/img17/events/blackfriday/bfcm_landing_page_faceout_lawn.jpg" class="Bubble-module__image_HKJMewjp5e7N8Poe02Ol">
+                    <p>Lawn &  garden</p>
+                </div>
+                <div class="category-card">
+                    <img alt="Sports &amp; Outdoors" src="https://m.media-amazon.com/images/G/01/DEB/2023/Summer_Sale/Beach_Ball.jpg" class="Bubble-module__image_HKJMewjp5e7N8Poe02Ol">
+                    <p>Sports</p>
+                </div>
+                <div class="category-card">
+                    <img alt="Fashion" src="https://m.media-amazon.com/images/G/01/goldbox/images/faceout/Fashion_white._CB468586683_.png" class="Bubble-module__image_HKJMewjp5e7N8Poe02Ol">
+                    <p>Fashion</p>
+                </div>
+                <div class="category-card">
+                    <img alt="Beauty" src="https://m.media-amazon.com/images/G/01/goldbox/images/faceout/Beauty_white._CB468586681_.png" class="Bubble-module__image_HKJMewjp5e7N8Poe02Ol">
+                    <p>Beauty</p>
+                </div>
+                <div class="category-card">
+                    <img alt="Home DIY &amp; Appliances" src="https://m.media-amazon.com/images/G/01/goldbox/images/faceout/rsz_homeimprovement.png" class="Bubble-module__image_HKJMewjp5e7N8Poe02Ol">
+                    <p>Home-DIY</p>
+                </div>
+                
+            
+               
+            </div>
+        </section>
+        
+           
+            <section class="product-list">
+            <div class="products-grid">
+            <!-- Example product card -->
+            <div class="product-card">
+                <img alt="Shark AI Ultra Voice Control Robot Vacuum with Matrix Clean Navigation, Home Mapping, 60-Day Capacity, Self-Empty Base for Homes with Pets, Carpet &amp; Hard Floors (Silver/Black)" src="https://m.media-amazon.com/images/I/418178B1XvL._AC_UF226,226_FMjpg_.jpg" data-a-hires="https://m.media-amazon.com/images/I/61yQ2hur-PL._AC_UF452,452_FMjpg_.jpg" class="ProductCardImage-module__image_SU6C7KYJpko3vQ2fK7Kf">
+                <p class="price">$329.99</p>
+                <p class="description">Shark AI Ultra Voice Control Robot Vacuum with Matrix</p>
+            </div>
+            <div class="product-card">
+                <img alt="Blink Outdoor 4 (4th Gen)  Wire-free smart security camera, two-year battery life, two-way audio, HD live view, enhanced motion detection, Works with Alexa 4 camera system" src="https://m.media-amazon.com/images/I/21M32lPBCXL._AC_UF226,226_FMjpg_.jpg" data-a-hires="https://m.media-amazon.com/images/I/41ZcQ8xFvoL._AC_UF452,452_FMjpg_.jpg" class="ProductCardImage-module__image_SU6C7KYJpko3vQ2fK7Kf">
+                <p class="price">$229.99</p>
+                <p class="description">Blink Outdoor 4 (4th Gen)  Wire-free smart security</p>
+            </div>
+            <div class="product-card">
+                <img alt="Samsonite Freeform Hardside Expandable with Double Spinner Wheels, Navy, 2-Piece Set (21/28)" src="https://m.media-amazon.com/images/I/41IQjlQHsyL._AC_UF226,226_FMjpg_.jpg" data-a-hires="https://m.media-amazon.com/images/I/71MYHWI1P4L._AC_UF452,452_FMjpg_.jpg" class="ProductCardImage-module__image_SU6C7KYJpko3vQ2fK7Kf">
+                <p class="price">$139.99</p>
+                <p class="description">Samsonite Omni 2 Hardside Expandable Luggage Set</p>
+            </div>
+            <div class="product-card">
+                <img alt="AODSK Ukulele For Beginners,Starter Bundle Kit with Free Gig Bag Strap Four String,Professional Acoustic Soprano Ukelele Wooden Hawaiian Uke for Kids Students Starter Kit-Violet.Ukulele Lessons" src="https://m.media-amazon.com/images/I/41Px4o9ssJL._AC_UF226,226_FMjpg_.jpg" data-a-hires="https://m.media-amazon.com/images/I/81zFJI02iCL._AC_UF452,452_FMjpg_.jpg" class="ProductCardImage-module__image_SU6C7KYJpko3vQ2fK7Kf">
+                <p class="price">$139.99</p>
+                <p class="description">AODSK Ukulele For Beginners,Starter Bundle</p>
+            </div>
+            <div class="product-card">
+                <img alt="Tibetan Singing Bowl Set Bronze - Master Healing Grade - Pure Tone With Tibetan Thangka Art By Himalayan Bazaar (Gold &amp; Yellow)" src="https://m.media-amazon.com/images/I/51b7ltMdH8L._AC_UF226,226_FMjpg_.jpg" data-a-hires="https://m.media-amazon.com/images/I/71dxBHkC8dL._AC_UF452,452_FMjpg_.jpg" class="ProductCardImage-module__image_SU6C7KYJpko3vQ2fK7Kf">
+                <p class="price">$139.99</p>
+                <p class="description">Tibetan Singing Bowl Set Bronze - Master Healing</p>
+            </div>
+            <div class="product-card">
+                <img alt="Karaoke Machine for Kids Adults, Portable Bluetooth Mini karaoke Microphone Singing Speaker with 2 Wireless Mic and Light,Toys for All Smartphones,Birthday, Family,Home Party (Black)" src="https://m.media-amazon.com/images/I/415w0sO9HmL._AC_UF226,226_FMjpg_.jpg" data-a-hires="https://m.media-amazon.com/images/I/81BEfCm8+jL._AC_UF452,452_FMjpg_.jpg" class="ProductCardImage-module__image_SU6C7KYJpko3vQ2fK7Kf">
+                <p class="price">$139.99</p>
+                <p class="description">Karaoke Machine for Kids Adults, Portable Bluetooth</p>
+            </div>
+            <div class="product-card">
+                <img alt="InnoGear Microphone Stand, Tripod Boom Arm Floor Mic Stand Height Adjustable Heavy Duty with Carrying Bag 2 Mic Clips 3/8&quot; to 5/8&quot; Adapter for Singing Podcast for Blue Yeti Shure SM58 SM48 Samson Q2U" src="https://m.media-amazon.com/images/I/41kHT61Rr-L._AC_UF226,226_FMjpg_.jpg" data-a-hires="https://m.media-amazon.com/images/I/71JK7RtQzfL._AC_UF452,452_FMjpg_.jpg" class="ProductCardImage-module__image_SU6C7KYJpko3vQ2fK7Kf">
+                <p class="price">$139.99</p>
+                <p class="description">InnoGear Microphone Stand, Tripod Boom Arm Floort</p>
+            </div>
+            <!-- Add more product cards here -->
+        </div>
+    </section> 
+<section>
+</div>
+    
+    </div>
+    <footer class="flex flex-col w-full">
+        <!-- FOOTER TOP ------------------------------------->
+        <div class="footer-top w-full text-white">
+            <!-- FOOTER TOP TOP -->
+            <a class="footer-top-top p-4 text-center block" href="#top">Back to top</a>
+            <!-- FOOTER TOP MIDDLE -->
+            <div class="footer-top-middle flex-col p-3">
+                <div class="footer-top-middle-links flex gap-20 p-8">
+
+                    <div class="flex flex-col gap-2">
+                        <h4 class="font-bold text-base">Get to know us</h4>
+                        <p><a href="#">Careers</a></p>
+                        <p><a href="#">Blog</a></p>
+                        <p><a href="#">About Amazon</a></p>
+                        <p><a href="#">Investor Relations</a></p>
+                        <p><a href="#">Amazon Devices</a></p>
+                        <p><a href="#">Amazon Science</a></p>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <h4 class="font-bold text-base">Make Money with Us</h4>
+                        <p><a href="#">Sell products on Amazon</a></p>
+                        <p><a href="#">Sell on Amazon Business</a></p>
+                        <p><a href="#">Sell Apps on Amazon</a></p>
+                        <p><a href="#">Become an Affiliate</a></p>
+                        <p><a href="#">Advertise Your Products</a></p>
+                        <p><a href="#">Self-Publish with Us</a></p>
+                        <p><a href="#">Host an Amazon Hub</a></p>
+                        <p><a href="#">Make Money with Us</a></p>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <h4 class="font-bold text-base">Amazon Payment Products</h4>
+                        <p><a href="#">Amazon Business Card</a></p>
+                        <p><a href="#">Shop with Points</a></p>
+                        <p><a href="#">Reload Your Balance</a></p>
+                        <p><a href="#">Amazon Currency Converter</a></p>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <h4 class="font-bold text-base">Let Us Help You</h4>
+                        <p><a href="#">Amazon and COVID-19</a></p>
+                        <p><a href="#">Your Account</a></p>
+                        <p><a href="#">Your Orders</a></p>
+                        <p><a href="#">Shipping Rates & Policies</a></p>
+                        <p><a href="#">Returns & Replacements</a></p>
+                        <p><a href="#">Manage Your Content and Devices</a></p>
+                        <p><a href="#">Help</a></p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- FOOTER TOP BOTTOM -->
+            <div class="footer-top-bottom">
+
+                <div class="footer-top-bottom-buttons flex items-center gap-20">
+
+                    <img src="./nav-img/PngItem_12080.png" alt="">
+
+                    <div class="flex gap-5">
+                        <a><i class="fa-solid fa-globe"></i> English</a>
+                        <a><i class="fa-solid fa-dollar-sign"></i> USD - U.S Dollar</a>
+                        <div class="US-button flex gap-0.5">
+                            <img class="US-flag" src="./nav-img/icons8-us-flag-48.png" alt="US Flag">
+                            <p>United States</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER BOTTOM ----------------------------------------->
+        <div class="footer-bottom text-white p-8 flex flex-col items-center justify-center gap-10">
+            <!-- FOOTER BOTTOM TOP -->
+            <div class="footer-bottom-top">
+                <div>
+                    <p>Amazon Music</p>
+                    <p href="">Stream millions of songs</p>
+                </div>
+                <div>
+                    <p href="">Amazon Ads</p>
+                    <p href="">Reach customers wherever they spend their time</p>
+                </div>
+                <div>
+                    <p href="">6pm</p>
+                    <p href="">Score deals on fashion brands</p>
+                </div>
+                <div>
+                    <p href="">AbeBooks</p>
+                    <p href="">Books, art & collectibles</p>
+                </div>
+                <div>
+                    <p href="">ACX</p>
+                    <p>Audiobook publishing made easy</p>
+                </div>
+                <div>
+                    <p href="">Sell on Amazon</p>
+                    <p>Start a selling account</p>
+                </div>
+                <div>
+                    <p href="">Amazon Business</p>
+                    <p>Everything for your business</p>
+                </div>
+
+
+                <div>
+                    <p href="">Amazon Global</p>
+                    <p>Ship orders internationally</p>
+                </div>
+                <div>
+                    <p href="">Home Services</p>
+                    <p>Experienced pros happiness guarentee</p>
+                </div>
+                <div>
+                    <p href="">Amazon Web Services</p>
+                    <p>Scalable cloud computing services</p>
+                </div>
+                <div>
+                    <p href="">Audible</p>
+                    <p>Listen to books & original audio performances</p>
+                </div>
+                <div>
+                    <p href="">Box Office Mojo</p>
+                    <p>Find movie box office data</p>
+                </div>
+                <div>
+                    <p href="">Goodreads</p>
+                    <p>Books reviews & recommendations</p>
+                </div>
+                <div>
+                    <p href="">IMDb</p>
+                    <p>Movies, TV & celebrities</p>
+                </div>
+
+
+                <div>
+                    <p href="">IMDbPro</p>
+                    <p>Get info entertainment professionals need</p>
+                </div>
+                <div>
+                    <p href="">Kindle Direct Publishing</p>
+                    <p>Indie digital & print publishing made easy</p>
+                </div>
+                <div>
+                    <p href="">Prime Video Direct</p>
+                    <p>Video distribution made easy</p>
+                </div>
+                <div>
+                    <p href="">Shopbop</p>
+                    <p>Designer fashion brands</p>
+                </div>
+                <div>
+                    <p href="">Woot!</p>
+                    <p>Deals and shenanigans</p>
+                </div>
+                <div>
+                    <p href="">Zappos</p>
+                    <p>Shoes & clothing</p>
+                </div>
+                <div>
+                    <p href="">Ring</p>
+                    <p>Smart home security systems</p>
+                </div>
+                
+                <div></div>
+                <div>
+                    <p href="">eero WiFi</p>
+                    <p>Stream 4K video in every room</p>
+                </div>
+                <div>
+                    <p href="">Blink</p>
+                    <p>Smart security for every home</p>
+                </div>
+                <div>
+                    <p href="">Neighbours App</p>
+                    <p>Real-time crime & safety alerts</p>
+                </div>
+                <div>
+                    <p href="">Amazon Subscription Boxes</p>
+                    <p>Top Subscription - right to your door</p>
+                </div>
+                <div>
+                    <p href="">PillPack</p>
+                    <p>Pharmacy simplified</p>
+                </div>
+                <div></div>
+
+            </div>
+            <!-- FOOTER BOTTOM BOTTOM -->
+            <div class="footer-bottom-bottom flex flex-col items-center gap-1">
+                <div class="flex gap-6">
+                    <a href="#">Conditions of Use</a>
+                    <a href="#">Privacy Notice</a>
+                    <a href="#">Consumer Health Data Privacy Disclosure</a>
+                    <a href="#">Your Ads Privacy Choices</a>
+                </div>
+                <p>&copy;1996-2024, Amazon.com, Inc or its affiliates</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
