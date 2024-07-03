@@ -2,21 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Amazon Ember",Arial,sans-serif;
 }
 
 section {
     padding: 10px 20px;
     text-align: left;
-    margin-top:30px;
-    
+    margin-top: 30px;
 }
 
 section a {
     margin: 0 10px;
     text-decoration: none;
-   
-    
 }
 
 #registery{
@@ -46,12 +42,9 @@ main .top-img {
 }
 
 .search-registry h2{
-    
     font-weight: bold;
     font-size: xx-large;
 }
-
-
 
 .hero-text {
     position: absolute;
@@ -82,9 +75,6 @@ main .top-img {
     font-size: large;
 }
 
-
-
-
 .hero-text button {
     background-color: #ffcc00;
     width: 240px;
@@ -97,9 +87,7 @@ main .top-img {
     color: black;
 }
 
-
 /* search class section */
-
 
 .search-registry {
     display: inline-flex;
@@ -120,7 +108,6 @@ main .top-img {
     display: flex;
     justify-content: center;
     gap: 10px;
-    
 }
 
 .search-box input, .search-box select, .search-box button {
@@ -135,8 +122,6 @@ main .top-img {
     margin-top: 10px;
 }
 
-
-
 .search-box button{
     width: 100px;
     margin-top:4px ;
@@ -145,8 +130,6 @@ main .top-img {
     border-radius: 30px;
 }
 
-
-
 .learn-more h2 {
     text-align: center;
     padding: 20px;
@@ -154,18 +137,13 @@ main .top-img {
     font-weight: bold;
 }
 
-
-
 /* card section */
-
-
 
 .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-
 }
 
 .card {
@@ -174,15 +152,12 @@ main .top-img {
     box-shadow: rgba(0,0,0,.15) 2px 2px 2px;
     align-items: center;
     color: #111;
-    padding-bottom: 30px;
-    
-    
+    padding-bottom: 30px;  
 }
 
 .card p {
     margin: 10px 0 0;
 }
-
 
 /* container section */
 
@@ -192,7 +167,6 @@ main .top-img {
     margin-top: 20px;
     padding: 20px;
 }
-
 
 .banner {
     position: relative;
@@ -205,8 +179,6 @@ main .top-img {
     height: auto;
 }
 
-
-
 /* reason class section */
 
 .reasons {
@@ -218,7 +190,6 @@ main .top-img {
     font-size: 2em;
     margin-bottom: 30px;
     color: black;
-    
 }
 
 .reason {
@@ -227,8 +198,7 @@ main .top-img {
     margin: 0 1%;
     background-color: white;
     border-radius: 5px;
-    padding: 20px;
-    
+    padding: 20px; 
     vertical-align: top;
 }
 
@@ -237,7 +207,6 @@ main .top-img {
     width: 80px;
     height: 80px;
     justify-content: center;
-    
 }
 
 .reason h3 {
