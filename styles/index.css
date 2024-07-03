@@ -110,6 +110,10 @@ main {
     border-radius: 4px;
 }
 
+.end-page-container button:hover {
+    background-color: #febd69d2;
+}
+
 .end-page-container p a {
     color: #007185;
 }
